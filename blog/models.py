@@ -5,9 +5,9 @@ class Post(models.Model):
     autor = models.ForeignKey('auth.User')
     titulo = models.CharField(max_length=200)
     texto = models.TextField()
-    data_criação = models.DateTimeField(
+    data_criacao = models.DateTimeField(
             default=timezone.now)
-    data_publicação = models.DateTimeField(
+    data_publicacao = models.DateTimeField(
             blank=True, null=True)
 
     def publish(self):
@@ -15,4 +15,4 @@ class Post(models.Model):
         self.save()
 
     def __str__(self):
-        return self.title
+        return self.titulo
